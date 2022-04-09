@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const PostItem = ({ title, author, comment, id }) => {
+const PostItem = ({ title, author, excerpt, id }) => {
   // Generate random images for avatar placeholder
   const random = Math.floor(Math.random() * 55) + 1;
   const avatarURL = `https://i.pravatar.cc/150?img=${random}`;
@@ -39,7 +39,7 @@ const PostItem = ({ title, author, comment, id }) => {
         />
         {author}
       </small> */}
-        <p>{comment}</p>
+        <p>{excerpt}</p>
       </a>
     </Link>
   );

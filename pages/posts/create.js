@@ -1,9 +1,17 @@
-import React from 'react'
+import PostCreate from "../../components/posts/PostCreate";
+import styles from "../../styles/Home.module.css";
 
 const CreatePost = () => {
-  return (
-    <div>create</div>
-  )
-}
+  const addCreatePostHandler = (data) => {
+    console.log(data);
+  };
 
-export default CreatePost
+  return (
+    <PostCreate
+      className={`${styles.container}`}
+      onPostCreate={addCreatePostHandler}
+    />
+  );
+};
+
+export default CreatePost;

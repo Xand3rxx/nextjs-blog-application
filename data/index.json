@@ -1,61 +1,68 @@
 {
-    "posts": [
-      {
-        "id": "376d6479-264f-48ce-a61c-d40b3c013f6a",
-        "title": "The White Expressions",
-        "author": "Sarah Nnamdi",
-        "timestamp": "2022-03-23",
-        "comment": "If you're visiting this page, you're likely here because you're searching for a random sentence. Sometimes a random word just isn't enough, and that is where the random sentence generator comes into play."
-      },
-      {
-        "id": "bc5bf4e4-d1f8-4d70-8dbc-53bd873d10d2",
-        "title": "Inside The Heart of Silicon Valley",
-        "author": "Isaac Chukwu",
-        "timestamp": "2022-03-25",
-        "comment": "By inputting the desired number, you can make a list of as many random sentences as you want or need."
-      },
-      {
-        "id": "24bbda9e-f2c5-47f2-b7e5-875ede989beb",
-        "title": "How I Met Your Mother",
-        "author": "Trisha Luther",
-        "timestamp": "2022-03-26",
-        "comment": "Or writers, a random sentence can help them get their creative juices flowing. Since the topic of the sentence is completely unknown, it forces the writer to be creative when the sentence appears."
-      },
-      {
-        "id": "02cbe749-9d6d-4a9b-9d5d-94a21aaf88d4",
-        "title": "Learning NextJS",
-        "author": "Mike Edwards",
-        "timestamp": "2022-03-27",
-        "comment": "There are a number of different ways a writer can use the random sentence for creativity. The most common way to use the sentence is to begin a story."
-      },
-      {
-        "id": "3fc6d41a-5837-4331-87fb-380c68e1a7e2",
-        "title": "The Big Bang Theory",
-        "author": "Funmi Bankole",
-        "timestamp": "2022-03-28",
-        "comment": "Another option is to include it somewhere in the story. A much more difficult challenge is to use it to end a story. In any of these cases, it forces the writer to think creatively since they have no idea what sentence will appear from the tool."
-      },
-      {
-        "id": "4c0bfbd8-4f5e-4027-882d-c249acb59d00",
-        "title": "My Experience in Paris",
-        "author": "Israel Adesanya",
-        "timestamp": "2022-03-29",
-        "comment": "For those writers who have writers' block, this can be an excellent way to take a step to crumbling those walls. By taking the writer away from the subject matter that is causing the block, a random sentence may allow them to see the project they're working on in a different light and perspective."
-      },
-      {
-        "id": "afa3d081-f60d-4642-80e0-46b2dfdb2d1f",
-        "title": "Smart Money Women",
-        "author": "Rebecca Cosmos",
-        "timestamp": "2022-03-29",
-        "comment": "Sometimes all it takes is to get that first sentence down to help break the block."
-      },
-      {
-        "id": "3989fdfb-9546-4a92-a408-dc3898df6281",
-        "title": "Never Cry Wolf",
-        "author": "Okoye Bright",
-        "timestamp": "2022-04-04",
-        "comment": "It can also be successfully used as a daily exercise to get writers to begin writing. Being shown a random sentence and using it to complete a paragraph each day can be an excellent way to begin any writing session."
-      }
-    ]
-  }
-  
+  "posts": [
+    {
+      "id": "376d6479-264f-48ce-a61c-d40b3c013f6a",
+      "title": "The White Expressions",
+      "author": "Sarah Nnamdi",
+      "timestamp": "2022-03-23",
+      "excerpt": "If you're visiting this page, you're likely here because you're searching for a random sentence.",
+      "description": "If you're visiting this page, you're likely here because you're searching for a random sentence. Sometimes a random word just isn't enough, and that is where the random sentence generator comes into play."
+    },
+    {
+      "id": "bc5bf4e4-d1f8-4d70-8dbc-53bd873d10d2",
+      "title": "Inside The Heart of Silicon Valley",
+      "author": "Isaac Chukwu",
+      "timestamp": "2022-03-25",
+      "excerpt": "By inputting the desired number, you can make a list of as many random sentences as you want or need.",
+      "description": "By inputting the desired number, you can make a list of as many random sentences as you want or need."
+    },
+    {
+      "id": "24bbda9e-f2c5-47f2-b7e5-875ede989beb",
+      "title": "How I Met Your Mother",
+      "author": "Trisha Luther",
+      "timestamp": "2022-03-26",
+      "excerpt": "Or writers, a random sentence can help them get their creative juices flowing.",
+      "description": "Or writers, a random sentence can help them get their creative juices flowing. Since the topic of the sentence is completely unknown, it forces the writer to be creative when the sentence appears."
+    },
+    {
+      "id": "02cbe749-9d6d-4a9b-9d5d-94a21aaf88d4",
+      "title": "Learning NextJS",
+      "author": "Mike Edwards",
+      "timestamp": "2022-03-27",
+      "excerpt": "There are a number of different ways a writer can use the random sentence for creativity.",
+      "description": "There are a number of different ways a writer can use the random sentence for creativity. The most common way to use the sentence is to begin a story."
+    },
+    {
+      "id": "3fc6d41a-5837-4331-87fb-380c68e1a7e2",
+      "title": "The Big Bang Theory",
+      "author": "Funmi Bankole",
+      "timestamp": "2022-03-28",
+      "excerpt": "Another option is to include it somewhere in the story. A much more difficult challenge is to use it to end a story.",
+      "description": "Another option is to include it somewhere in the story. A much more difficult challenge is to use it to end a story. In any of these cases, it forces the writer to think creatively since they have no idea what sentence will appear from the tool."
+    },
+    {
+      "id": "4c0bfbd8-4f5e-4027-882d-c249acb59d00",
+      "title": "My Experience in Paris",
+      "author": "Israel Adesanya",
+      "timestamp": "2022-03-29",
+      "excerpt": "For those writers who have writers' block, this can be an excellent way to take a step to crumbling those walls.",
+      "description": "For those writers who have writers' block, this can be an excellent way to take a step to crumbling those walls. By taking the writer away from the subject matter that is causing the block, a random sentence may allow them to see the project they're working on in a different light and perspective."
+    },
+    {
+      "id": "afa3d081-f60d-4642-80e0-46b2dfdb2d1f",
+      "title": "Smart Money Women",
+      "author": "Rebecca Cosmos",
+      "timestamp": "2022-03-29",
+      "excerpt": "Sometimes all it takes is to get that first sentence down to help break the block.",
+      "description": "Sometimes all it takes is to get that first sentence down to help break the block."
+    },
+    {
+      "id": "3989fdfb-9546-4a92-a408-dc3898df6281",
+      "title": "Never Cry Wolf",
+      "author": "Okoye Bright",
+      "timestamp": "2022-04-04",
+      "excerpt": "It can also be successfully used as a daily exercise to get writers to begin writing.",
+      "description": "It can also be successfully used as a daily exercise to get writers to begin writing. Being shown a random sentence and using it to complete a paragraph each day can be an excellent way to begin any writing session."
+    }
+  ]
+}

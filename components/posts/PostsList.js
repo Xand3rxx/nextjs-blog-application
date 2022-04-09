@@ -11,7 +11,7 @@ const PostsList = (props) => {
               key={post.id}
               title={post.title}
               author={post.author}
-              comment={post.comment}
+              excerpt={post.excerpt}
             />
           ))
         : "No posts found!"}

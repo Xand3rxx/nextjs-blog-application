@@ -1,10 +1,17 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import PostsList from "../components/posts/PostsList";
 import posts from "../data/index";
 
 export default function Home() {
-  
+  // const [loadedPosts, setLoadedPosts] = useState([]);
+
+  // useEffect(() => {
+  //   // Send a request and fetch the post data
+  //   setLoadedPosts(posts);
+  // }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,20 +23,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={`${styles.title} ${styles.my10}`}>NextJS: Xand3rx Blog</h1>
-        <PostsList posts={posts} />
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://github.com/Xand3rxx"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Designed by Anthony Joboy
-        </a>
-      </footer>
+      <h1 className={`${styles.title} ${styles.my5}`}>NextJS: Xand3rx Blog</h1>
+      <PostsList posts={posts} />
     </div>
   );
 }
