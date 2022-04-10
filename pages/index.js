@@ -2,15 +2,36 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import PostsList from "../components/posts/PostsList";
-import posts from "../data/index";
+import POSTS from "../data/index";
 
-export default function Home() {
-  // const [loadedPosts, setLoadedPosts] = useState([]);
+// For static rendering with build up
+// export const getStaticProps = async () => {
+//   return {
+//     props: {
+//       posts: POSTS.posts,
+//     },
+//     revalidate: 3600,
+//   };
+// };
 
-  // useEffect(() => {
-  //   // Send a request and fetch the post data
-  //   setLoadedPosts(posts);
-  // }, []);
+// For server side rendering
+// export const getServerSideProps = async (context) => {
+//   const req = context.req;
+//   const res = context.res;
+
+//   return {
+//     props: {
+//       posts: POSTS.posts,
+//     },
+//   };
+// };
+
+export default function Home(props) {
+  const [loadedPosts, setLoadedPosts] = useState([]);
+  useEffect(() => {
+    // Send a request and fetch the post data
+    setLoadedPosts(POSTS.posts);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -24,7 +45,7 @@ export default function Home() {
       </Head>
 
       <h1 className={`${styles.title} ${styles.my5}`}>NextJS: Xand3rx Blog</h1>
-      <PostsList posts={posts} />
+      <PostsList data={loadedPosts} />
     </div>
   );
 }
