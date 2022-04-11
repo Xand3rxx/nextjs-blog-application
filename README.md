@@ -23,8 +23,13 @@ A simple blog application built with NextJs.
 
 Now you can access `process.env.MONGODB_URI` or any name you prefer in the code base. For example:
 
-5. Optionally you can change connection parameters in `/data/mongodb.js` and `/pages/api/api-service.js` respectively.
+5. Optionally you can change connection parameters in `/lib/mongodb.js` and `/pages/api/api-service.js` respectively.
 
 7. [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3100/api/hello](http://localhost:3100/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 8. The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+
+## Project Screenshots
+
+![Index Page](/public/img/landing.png)
