@@ -1163,6 +1163,11 @@
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
 
+"net@^1.0.2":
+  "integrity" "sha1-0XV+yaf7I3HYPPR1XOPifhCCk4g="
+  "resolved" "https://registry.npmjs.org/net/-/net-1.0.2.tgz"
+  "version" "1.0.2"
+
 "next@>=10.2.0", "next@12.1.4":
   "integrity" "sha512-DA4g97BM4Z0nKtDvCTm58RxdvoQyYzeg0AeVbh0N4Y/D8ELrNu47lQeEgRGF8hV4eQ+Sal90zxrJQQG/mPQ8CQ=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.4.tgz"

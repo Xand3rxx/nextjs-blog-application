@@ -1,6 +1,8 @@
 import PostCreate from "../../components/posts/PostCreate";
 import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Head from "next/head";
+
 const CreatePost = () => {
   const router = useRouter();
 
@@ -25,10 +27,21 @@ const CreatePost = () => {
   };
 
   return (
-    <PostCreate
-      className={`${styles.container}`}
-      onPostCreate={addCreatePostHandler}
-    />
+    <>
+      <Head>
+        <title>Create | NextJS Demo Application</title>
+        <meta
+          name="description"
+          content="Create blog post"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <PostCreate
+        className={`${styles.container}`}
+        onPostCreate={addCreatePostHandler}
+      />
+    </>
   );
 };
 

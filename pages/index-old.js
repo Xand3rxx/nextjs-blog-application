@@ -62,3 +62,13 @@ export default function Home() {
     </div>
   );
 }
+
+
+// const client = MongoClient.connect(
+  //   "mongodb+srv://Xand3rx:digits232@cluster0.anhcv.mongodb.net/blogPosts?retryWrites=true&w=majority"
+  // );
+  // const db = (await client).db();
+
+  // const blogCollection = await db.collection("posts");
+
+  // const results = await blogCollection.find().toArray();
