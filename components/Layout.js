@@ -27,7 +27,7 @@ const Layout = (props) => {
         <div className={`${styles.containerFluid}`}>
           <Link href={routes.home} passHref>
             <a className={`${styles.navbarBrand} ${styles.mx5}`}>
-              NextJS: Xand3rx BLOG
+              NextJS: Blog Application
               {props.appName}
             </a>
           </Link>
