@@ -1,6 +1,6 @@
 # NextJs Blog Application
 
-A simple blog application built with NextJs and MongoDB.
+A simple blog application built with `NextJs` and `MongoDB`.
 
 ## Languages
 
