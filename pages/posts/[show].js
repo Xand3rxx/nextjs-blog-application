@@ -1,29 +1,28 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/PostDetail";
 import Head from "next/head";
+const { DB_CONNECTION } = require("../../lib/mongodb");
+const ObjectId = require("mongodb").ObjectId;
 
-const ShowPost = () => {
-  const router = useRouter();
+const ShowPost = (props) => {
+  // const router = useRouter();
 
   // return <h1>{router.query.show}</h1>;
   //Uncomment for offline usage
   return (
     <>
-    <Head>
-        <title>Create | NextJS Demo Application</title>
-        <meta
-          name="description"
-          content="Create blog post"
-        />
+      <Head>
+        <title>{props.post.title} | {props.appName}</title>
+        <meta name="description" content={props.post.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* new Date(post.createdAt).toLocaleDateString() */}
+
       <PostDetail
-      title="The White Expressions"
-      author="Sarah Nnamdi"
-      timestamp="2022-03-23"
-      description="If you're visiting this page, you're likely here because you're searching for a random sentence. Sometimes a random word just isn't enough, and that is where the random sentence generator comes into play."
-    />
+        title={props.post.title}
+        author={props.post.author}
+        timestamp={new Date(props.post.timestamp).toLocaleDateString()}
+        description={props.post.description}
+      />
     </>
   );
 };
@@ -32,8 +31,16 @@ export default ShowPost;
 
 // Get exact page data to pregenerate
 export const getStaticPaths = async () => {
+  const { db } = await DB_CONNECTION();
+
+  // Get the results from the api
+  const results = await db
+    .collection(process.env.COLLECTION_NAME)
+    .find({}, { _id: 1 })
+    .toArray();
+
   return {
-    fallback: 'blocking', // Every id is accounted for
+    fallback: "blocking", // Every id is accounted for
     paths: results.map((post) => ({
       id: post._id.toString(),
     })),
@@ -42,13 +49,24 @@ export const getStaticPaths = async () => {
 
 // For static data with id
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
+  const { db } = await DB_CONNECTION();
+
+  // Get the result of the parameters
+  const post = await db
+    .collection(process.env.COLLECTION_NAME)
+    .findOne({ _id: ObjectId(context.params.id) })
+    .toArray();
 
   return {
     props: {
       post: {
-        title: id,
+        id: post._id.toString(),
+        title: post.title,
+        author: post.author,
+        excerpt: post.excerpt,
+        description: post.description,
       },
+      appName: process.env.APP_NAME,
     },
   };
 };

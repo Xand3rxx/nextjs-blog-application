@@ -8,7 +8,7 @@ const CreatePost = () => {
 
   const addCreatePostHandler = async (data) => {
     try {
-      const payload = await fetch("/api/create-post/", {
+      const payload = await fetch("/api/api-service/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -18,7 +18,7 @@ const CreatePost = () => {
       });
 
       const response = await payload.json();
-      console.log(response);
+      alert(response.message);
       document.getElementById("create-post-form").reset();
       // router.push("/");
     } catch (err) {

@@ -2,6 +2,22 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import routes from "../data/routes";
 
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      appName: process.env.APP_NAME,
+    },
+  };
+};
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      appName: process.env.APP_NAME,
+    },
+  };
+};
+
 const Layout = (props) => {
   return (
     <>
@@ -12,7 +28,8 @@ const Layout = (props) => {
           <Link href={routes.home} passHref>
             <a className={`${styles.navbarBrand} ${styles.mx5}`}>
               {/* <Image src={logo} alt="" width={20} height={20} /> */}
-              NextJS: Xand3rx Blog
+              NextJS: Xand3rx BLOG
+              {props.appName}
             </a>
           </Link>
 

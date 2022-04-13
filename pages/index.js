@@ -6,13 +6,17 @@ import PostsList from "../components/posts/PostsList";
 
 // For static rendering with build up
 export const getServerSideProps = async () => {
+  //   const req = context.req;
+  //   const res = context.res;
+
   // Get all posts from api
   const payload = await fetch(process.env.DEVELOPMENT_URL, {
     method: "GET",
   });
 
   // Get the results from the api
-  let results = await payload.json();
+  const results = await payload.json();
+  // console.error("SERVER_RESPONSE => ", results);
 
   return {
     props: {
@@ -22,24 +26,25 @@ export const getServerSideProps = async () => {
         author: post.author,
         excerpt: post.excerpt,
       })),
+      appName: process.env.APP_NAME,
     },
     //   //Uncomment for offline usage
     // props: {
     //   posts: POSTS.posts,
+    //   appName: process.env.APP_NAME,
     // },
-    // revalidate: 1000, // Number in seconds to refectch static deata
   };
 };
 
-// For server side rendering
-// export const getServerSideProps = async (context) => {
-//   const req = context.req;
-//   const res = context.res;
-
+// For static site rendering
+// export const getStaticProps = async () => {
 //   return {
 //     props: {
 //       posts: POSTS.posts,
+// appName: process.env.APP_NAME,
+
 //     },
+//     revalidate: 1000, // Number in seconds to refectch static deata
 //   };
 // };
 
@@ -54,7 +59,7 @@ export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Home | NextJS Demo Application</title>
+        <title>Home | {props.appName}</title>
         <meta
           name="description"
           content="A demo application built with NextJS"
@@ -62,7 +67,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={`${styles.title} ${styles.my5}`}>NextJS: Xand3rx Blog</h1>
+      <h1 className={`${styles.title} ${styles.my5}`}>{props.appName}</h1>
       <PostsList data={props.posts} />
     </div>
   );
