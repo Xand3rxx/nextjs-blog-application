@@ -1,4 +1,4 @@
-const { DB_CONNECTION } = require("../../lib/mongodb");
+const { MONGODB_CONNECTION } = require("../../lib/mongodb");
 const ObjectId = require("mongodb").ObjectId;
 
 export default async function handler(req, res) {
@@ -28,7 +28,7 @@ const getPosts = async (req, res) => {
   if (req.method === "GET") {
     try {
       // connect to the database
-      const { db } = await DB_CONNECTION();
+      const { db } = await MONGODB_CONNECTION();
 
       // fetch the posts
       let results = await db
@@ -58,7 +58,7 @@ const createPost = async (req, res) => {
     const data = JSON.parse(req.body);
 
     // Connect to database
-    const { db } = await DB_CONNECTION();
+    const { db } = await MONGODB_CONNECTION();
 
     const blogCollection = await db.collection(process.env.COLLECTION_NAME);
 
@@ -78,7 +78,7 @@ const updatePost = async (req, res) => {
     const data = JSON.parse(req.body);
 
     // Connect to database
-    const { db } = await DB_CONNECTION();
+    const { db } = await MONGODB_CONNECTION();
 
     // update the published status of the post
     await db.collection(process.env.COLLECTION_NAME).updateOne(
@@ -105,7 +105,7 @@ const updatePost = async (req, res) => {
 const deletePost = async (req, res) => {
   try {
     // Connect to database
-    const { db } = await DB_CONNECTION();
+    const { db } = await MONGODB_CONNECTION();
 
     // Deleting the post
     await db.collection(process.env.COLLECTION_NAME).deleteOne({

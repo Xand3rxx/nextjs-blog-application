@@ -1,7 +1,7 @@
 // import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/PostDetail";
 import Head from "next/head";
-const { DB_CONNECTION } = require("../../lib/mongodb");
+const { MONGODB_CONNECTION } = require("../../lib/mongodb");
 const ObjectId = require("mongodb").ObjectId;
 
 const ShowPost = (props) => {
@@ -31,7 +31,7 @@ export default ShowPost;
 
 // Get exact page data to pregenerate
 export const getStaticPaths = async () => {
-  const { db } = await DB_CONNECTION();
+  const { db } = await MONGODB_CONNECTION();
 
   // Get the results from the api
   const results = await db
@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
 
 // For static data with id
 export const getStaticProps = async (context) => {
-  const { db } = await DB_CONNECTION();
+  const { db } = await MONGODB_CONNECTION();
 
   // Get the result of the parameters
   const post = await db
