@@ -1,9 +1,18 @@
 html,
 body {
-  padding: 0;
+  /* line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -o-tab-size: 4;
+  tab-size: 4;
+  padding: 0; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    background: linear-gradient(45deg,#d1aad7,#c88bc4 25%,#7b8fdd 50%,#86bff2 74.87%,#bbdef2 99.88%);
+    color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

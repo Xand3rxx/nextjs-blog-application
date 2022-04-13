@@ -33,4 +33,5 @@ Now you can access `process.env.MONGODB_URI` or any name you prefer in the code 
 
 ## Project Screenshots
 
-![Index Page](/public/img/landing.png)
+![Index Page](/public/img/landing.jpg)
+![Blog Details Page](/public/img/landing-2.jpg)

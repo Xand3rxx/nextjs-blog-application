@@ -1,18 +1,15 @@
-// import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/PostDetail";
 import Head from "next/head";
 const { MONGODB_CONNECTION } = require("../../lib/mongodb");
 const ObjectId = require("mongodb").ObjectId;
 
 const ShowPost = (props) => {
-  // const router = useRouter();
-
-  // return <h1>{router.query.show}</h1>;
-  //Uncomment for offline usage
   return (
     <>
       <Head>
-        <title>{props.post.title} | {props.appName}</title>
+        <title>
+          {props.post.title} | {props.appName}
+        </title>
         <meta name="description" content={props.post.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -20,7 +17,8 @@ const ShowPost = (props) => {
       <PostDetail
         title={props.post.title}
         author={props.post.author}
-        timestamp={new Date(props.post.timestamp).toLocaleDateString()}
+        // timestamp={new Date(props.post.timestamp).toLocaleDateString()}
+        timestamp={props.post.timestamp}
         description={props.post.description}
       />
     </>
@@ -39,10 +37,11 @@ export const getStaticPaths = async () => {
     .find({}, { _id: 1 })
     .toArray();
 
+
   return {
     fallback: "blocking", // Every id is accounted for
     paths: results.map((post) => ({
-      id: post._id.toString(),
+      params: { show: post._id.toString() },
     })),
   };
 };
@@ -54,8 +53,7 @@ export const getStaticProps = async (context) => {
   // Get the result of the parameters
   const post = await db
     .collection(process.env.COLLECTION_NAME)
-    .findOne({ _id: ObjectId(context.params.id) })
-    .toArray();
+    .findOne({ _id: ObjectId(context.params.show) });
 
   return {
     props: {

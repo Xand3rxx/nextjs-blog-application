@@ -55,7 +55,7 @@ const getPosts = async (req, res) => {
 const createPost = async (req, res) => {
   if (req.method === "POST") {
     // Get body request
-    const data = JSON.parse(req.body);
+    const data = req.body;
 
     // Connect to database
     const { db } = await MONGODB_CONNECTION();
@@ -95,7 +95,7 @@ const updatePost = async (req, res) => {
     });
   } catch (error) {
     // return an error
-    return res.status(200).json({
+    return res.json({
       message: new Error(error).message,
       success: false,
     });

@@ -83,25 +83,34 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 450px;
+  background: #000000b5; /* fallback colour. Make sure this is just one solid colour. */
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.2)),
+    url("https://picsum.photos/id/42/500/200");
+  height: 200px;
+  object-fit: cover;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  /* color: #0070f3;
+  border-color: #0070f3; */
+  color: #fff;
+  border-color: #fff;
 }
 
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
 }
 
 .card p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  /* width: 250px; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
