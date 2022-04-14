@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import PostsList from "../components/posts/PostsList";
-
+import POST from "../data/index.json";
 // For static rendering with build up
 export const getServerSideProps = async () => {
   // Get all posts from api
@@ -15,19 +15,21 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      posts: results.message.map((post) => ({
-        id: post._id.toString(),
-        title: post.title,
-        author: post.author,
-        excerpt: post.excerpt,
-      })),
+      posts:
+        results == ""
+          ? results.message.map((post) => ({
+              id: post._id.toString(),
+              title: post.title,
+              author: post.author,
+              excerpt: post.excerpt,
+            }))
+          : POST.posts,
       appName: process.env.APP_NAME,
     },
   };
 };
 
 export default function Home(props) {
-
   return (
     <div className={styles.container}>
       <Head>

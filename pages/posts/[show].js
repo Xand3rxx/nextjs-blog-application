@@ -2,6 +2,7 @@ import PostDetail from "../../components/posts/PostDetail";
 import Head from "next/head";
 const { MONGODB_CONNECTION } = require("../../lib/mongodb");
 const ObjectId = require("mongodb").ObjectId;
+import POST from "../../data/index";
 
 const ShowPost = (props) => {
   return (
@@ -37,12 +38,16 @@ export const getStaticPaths = async () => {
     .find({}, { _id: 1 })
     .toArray();
 
-
   return {
     fallback: "blocking", // Every id is accounted for
-    paths: results.map((post) => ({
-      params: { show: post._id.toString() },
-    })),
+    paths:
+      results == ""
+        ? results.map((post) => ({
+            params: { show: post._id.toString() },
+          }))
+        : POST.posts.map((post) => ({
+            params: { show: post.id },
+          })),
   };
 };
 
